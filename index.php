@@ -5,11 +5,12 @@ include_once 'Service/Service.php';
 use Service\ProductManager;
 use Model\Product;
 
-$productManager=new ProductManager();
-$productManager->add(new Product('vanguard'));
-$productManager->add(new Product('battle spirit'));
+$productManager = new ProductManager();
+$productManager->add(new Product('vanguard', 500));
+$productManager->add(new Product('battle spirit', 600));
 
-$products=$productManager->getProduct();
+$products = $productManager->getProduct();
 foreach ($products as $product) {
-    echo $product->getName().'<br>';
+    echo $product->getName().' ';
+    echo $product->getPrice().'<br>';
 }
